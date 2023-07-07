@@ -1,0 +1,23 @@
+{
+  "name": "strapi-flatten-graphql",
+  "version": "0.1.0",
+  "description": "helper to flatten nested strapi v4 graphql structure including typings",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "strapi",
+    "graphql",
+    "typescript"
+  ],
+  "author": "Szymon Stasik <ciekawy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "dist"
+  ]
+}
