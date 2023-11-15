@@ -88,7 +88,8 @@ export function flattenDeep<T extends StrapiEntityResponse|StrapiEntityResponseC
             if (isFlattenable(value)) {
                 if ('data' in value && Array.isArray((value as any).data)) {
                     result[key] = flattenEntityResponseCollection(value);
-                } else {
+                }
+                if (value.data) {
                     result[key] = flattenEntityResponse(value);
                 }
             } else {
