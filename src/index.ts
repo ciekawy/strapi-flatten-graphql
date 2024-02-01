@@ -1,4 +1,4 @@
-export type StrapiEntity = { id?: string|null; attributes?: object|null };
+export type StrapiEntity = { id?: string|null; attributes?: object|null, __typename?: string|null };
 export type StrapiEntityResponse<N extends object =object> = { data?: StrapiEntity|null };
 export type StrapiEntityResponseCollection<N extends object =object> = { data?: Array<StrapiEntity>|null };
 
@@ -62,7 +62,7 @@ export function flattenEntityResponseCollection<T extends StrapiEntityResponseCo
 
 function isFlattenable(value: any): value is StrapiEntityResponse | StrapiEntityResponseCollection {
     return typeof value === 'object' && value !== null && '__typename' in value &&
-        (value.__typename.endsWith('EntityResponse') || value.__typename.endsWith('ResponseCollection'));
+        (value.__typename.endsWith('EntityResponse') || value.__typename.endsWith('ResponseCollection')|| value.__typename.endsWith('Entity'));
 }
 
 export function flattenDeep<T extends StrapiEntityResponse|StrapiEntityResponseCollection>(obj: T): FlattenStrapi<T> {
